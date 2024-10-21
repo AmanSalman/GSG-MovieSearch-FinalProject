@@ -1,0 +1,55 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* system design */
+
+:root {
+  --dark-bg: #01070A;
+  --dark-teal: #46656F;
+  --light-teal: #8FABB7;
+  --light-gray: #D8DFE5;
+  --white: #FBFBFB;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--dark-bg);
+  color: var(--white);
+}
+
+/* Button style */
+button {
+  background-color: var(--light-gray);
+  color: var(--dark-bg);
+  border: none;
+  border-radius: .7rem;
+  padding: .5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: var(--white);
+}
+
+footer {
+  background-color: var(--dark-teal);
+  padding: 10px;
+  text-align: center;
+  color: var(--white);
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+a {
+  color: var(--light-gray);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--white);
+}
