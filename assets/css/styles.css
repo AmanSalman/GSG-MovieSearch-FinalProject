@@ -53,3 +53,42 @@ a {
 a:hover {
   color: var(--white);
 }
+
+
+
+#movies-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid */
+  gap: 20px; /* Space between cards */
+  padding: 20px;
+}
+
+.movie-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: .7rem;
+}
+
+.movie-card img {
+  width: 100%;
+  border-radius: .7rem  .7rem 0 0; /* Round the top corners */
+}
+
+.movie-card .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.movie-card:hover .overlay {
+  opacity: 1;
+}
