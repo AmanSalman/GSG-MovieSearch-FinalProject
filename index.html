@@ -3,22 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/styles.css">
     <title>Movie Search App</title>
 </head>
 <body>
-    <nav>
+    <!-- <nav>
         <h1>Movie Search App</h1>
         <input type="text" id="search" placeholder="Search for movies...">
         <button id="search-button">Search</button>
         <a href="favorites.html">Favorites</a>
+    </nav> -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <h1 class="logo"> 
+                <img src="./assets/imgs/movie.png" alt="logo">
+                <span>Movify</span>
+            </h1>
+            <ul class="navbar-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="favorites.html">Favorites</a></li>
+                <li><a href="#top-rated">Top Rated</a></li>
+            </ul>
+        </div>
     </nav>
+
+    <section class="hero">
+        <div class="search-container">
+            <h2>Find Your Next Favorite Movie!</h2>
+            <input type="text" id="search" placeholder="Search for movies...">
+            <button id="search-button">Search</button>
+        </div>
+    </section>
+    
     <section id="top-rated">
+      <div class="movie-section">
+        <span class="text-uppercase">MOVIES</span>
         <h2>Top Rated Movies</h2>
+    </div>
+    
         <div id="movies-list"></div>
     </section>
     <footer>
-        <p>&copy; 2024 Movie Search App</p>
+        <p>&copy; 2024 A-Double M</p>
     </footer>
     <script src="./assets/js/main.js"></script>
 </body>
