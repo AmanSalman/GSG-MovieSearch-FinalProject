@@ -53,7 +53,7 @@ h1,h2 {
 }
 
 /* Button style */
-button {
+button  {
   background-color: var(--light-gray);
   color: var(--dark-bg);
   border: none;
@@ -63,10 +63,16 @@ button {
   transition: background-color 0.3s;
 }
 
-button:hover {
+button:hover{
   background-color: var(--white);
 }
-
+.button-details{
+  border: none;
+  border-radius: .7rem;
+  padding: .5rem 1rem;
+  cursor: pointer;
+  background-color: var(--dark-teal);
+}
 footer {
   background-color:#191919;
   padding: 10px;

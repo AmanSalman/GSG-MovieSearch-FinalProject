@@ -1,0 +1,147 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* system design */
+
+/* Dosis */
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap');
+
+/* Roboto */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+
+/* Dancing script */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
+
+
+:root {
+  --dark-bg: #01070A;
+  --dark-teal: #46656F;
+  --light-teal: #8FABB7;
+  --light-gray: #D8DFE5;
+  --white: #FBFBFB;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--white);
+  color: var(--light-gray);
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 6rem;
+
+}
+
+.movie-header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--light-teal); 
+  padding-bottom: 20px;
+}
+
+.movie-info {
+  flex: 2;
+  margin-left: 20px;
+}
+
+.movie-info h1 {
+  font-size: 2.5em;
+  margin: 0;
+}
+
+.tagline {
+  font-size: 1.2em;
+  color: var(--light-teal); 
+  margin-bottom: 10px;
+}
+
+.details {
+  font-size: 0.9em;
+  color: var(--light-teal);
+  margin-bottom: 10px;
+}
+
+.details span {
+  margin-right: 10px;
+}
+
+.rating-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.rating-score {
+  font-size: 1.5em;
+  color: #ffcc00;
+  margin-right: 10px;
+}
+
+.stars {
+  display: inline-block;
+  color: #ffcc00;
+}
+
+.votes {
+  margin-left: 10px;
+  font-size: 0.9em;
+}
+
+.categories span {
+  display: inline-block;
+  margin-right: 10px;
+  background-color: var(--dark-teal); /* Lighter background for categories */
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.movie-poster {
+  flex: 1;
+  text-align: left;
+}
+
+.movie-poster img {
+  width: 180px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.story-section {
+  margin-top: 20px;
+  padding-top: 20px;
+}
+
+.section-title {
+  font-size: 1.5em;
+  color: var(--dark-bg); 
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.image-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
+  max-width: 100%;
+}
+
+.image-gallery img {
+  width: 180px;
+  height: 120px;
+  border-radius: 10px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.inner-container {
+  padding: 2rem;
+  background-color: rgb(112 112 112 / 50%);
+  border-radius: 15px;
+}
