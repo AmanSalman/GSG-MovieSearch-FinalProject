@@ -71,7 +71,8 @@ button:hover{
   border-radius: .7rem;
   padding: .5rem 1rem;
   cursor: pointer;
-  background-color: var(--dark-teal);
+  background-color: var(--light-gray);
+  color: var(--dark-teal);
 }
 footer {
   background-color:#191919;

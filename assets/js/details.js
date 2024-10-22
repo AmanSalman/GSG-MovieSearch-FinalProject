@@ -23,8 +23,7 @@ async function fetchMovieDetails() {
 
         displayMovie(data, imgData.backdrops);
     } catch (error) {
-        // Handle error by displaying a "Not Found" message
-        displayNotFoundMessage(error.message);
+        displayNotFoundMessage();
     }
 }
 
@@ -60,8 +59,7 @@ function displayMovie(movie, images) {
     }).join('');
 }
 
-// Function to display a "Not Found" message
-function displayNotFoundMessage(errorMessage) {
+function displayNotFoundMessage() {
     const storysection = document.querySelector('.story-section');
     movieheader.innerHTML = `<h1>Movie Not Found</h1>`;
     storysection.innerHTML = ``;
