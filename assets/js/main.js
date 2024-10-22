@@ -7,38 +7,48 @@ async function fetchTopRatedMovies() {
     `https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}`
   );
   const data = await response.json();
-  console.log(data.results)
   localStorage.setItem('TopRated', JSON.stringify(data.results.slice(0, 12)));
-  displayMovies(data.results.slice(0, 12), true);
+  displayMovies(data.results.slice(0, 12));
 }
 
-function displayMovies(movies, append = false) {
-  if (!append) moviesList.innerHTML = "";
-
+function displayMovies(movies) {
+  moviesList.innerHTML = "";
   movies.forEach((movie) => {
     const card = document.createElement("div");
     card.className = "movie-card";
     const isFavorite = isMovieFavorite(movie.id) ? "♥" : "♡";
-    
+
     card.innerHTML = `
-            <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}">
-            <div class="overlay">
-                <h3>${movie.title}</h3>
-                <span>${movie.vote_average} ⭐ </span> 
-                <span class="fav" data-id="${movie.id}" onclick="toggleFavorite(${movie.id})">${isFavorite}</span>
-                <a href="details.html?id=${movie.id}" class="button-details">View Details</a>           
-               </div>
-        `;
+      <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}">
+      <div class="overlay">
+        <h3>${movie.title}</h3>
+        <span>${movie.vote_average} ⭐</span> 
+        <span class="fav" data-id="${movie.id}" onclick="toggleFavorite(${movie.id})">${isFavorite}</span>
+        <a href="details.html?id=${movie.id}" class="button-details">View Details</a>
+      </div>
+    `;
     moviesList.appendChild(card);
   });
 }
 
-fetchTopRatedMovies() 
+function toggleFavorite(movieId) {
+  let favorites = getFavorites();
+  if (favorites.includes(movieId)) {
+    favorites = favorites.filter(id => id !== movieId);
+  } else {
+    favorites.push(movieId);
+  }
+  localStorage.setItem("favorites", JSON.stringify(favorites));
+  fetchTopRatedMovies();
+}
 
+function getFavorites() {
+  return JSON.parse(localStorage.getItem("favorites")) || [];
+}
 
-function getQueryParam(param) {
-  const urlParams = new URLSearchParams(window.location.search);
-  return urlParams.get(param);
+function isMovieFavorite(movieId) {
+  const favorites = getFavorites();
+  return favorites.includes(movieId);
 }
 
 async function fetchMovies(query) {
@@ -52,14 +62,16 @@ async function fetchMovies(query) {
 async function displaySearchResults() {
   const query = getQueryParam("query");
   messageDiv.innerHTML = "";
-
+  
+  
   if (query) {
-    const movies = await fetchMovies(query);
-    moviesList.innerHTML = "";
-
-    if (movies.length > 0) {
-      displayMovies(movies);
-    } else {
+      const movies = await fetchMovies(query);
+      moviesList.innerHTML = "";
+      
+      if (movies.length > 0) {
+          displayMovies(movies);
+        } else {
+        messageDiv.style.display = 'block'
       messageDiv.innerHTML = `
         <div class="no-results">
           <p>No movies found for this search. Here are some top-rated movies instead:</p>
@@ -70,39 +82,16 @@ async function displaySearchResults() {
   }
 }
 
+function getQueryParam(param) {
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get(param);
+}
+
 if (window.location.pathname.includes("search-results.html")) {
   displaySearchResults();
+} else {
+  fetchTopRatedMovies();
 }
-
-
-// Toggle favorite status
-function toggleFavorite(movieId) {
-  let favorites = getFavorites();
-  if (favorites.includes(movieId)) {
-    // Remove movie from favorites
-    favorites = favorites.filter(id => id !== movieId);
-  } else {
-    // Add movie to favorites
-    favorites.push(movieId);
-  }
-  localStorage.setItem("favorites", JSON.stringify(favorites));
-  // Update UI
-  fetchTopRatedMovies();  // Re-fetch or just update the favorite icon
-}
-
-// Get favorites from localStorage
-function getFavorites() {
-  return JSON.parse(localStorage.getItem("favorites")) || [];
-}
-
-// Check if a movie is favorite
-function isMovieFavorite(movieId) {
-  const favorites = getFavorites();
-  return favorites.includes(movieId);
-}
-
-// Initialize the app
-fetchTopRatedMovies();
 
 const searchButton = document.getElementById("search-button");
 const searchInput = document.getElementById("search");
