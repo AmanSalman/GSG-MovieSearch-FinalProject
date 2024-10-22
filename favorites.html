@@ -5,17 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="stylesheet" href="./assets/css/favorites.css">
     <title>Favorites Movies</title>
 </head>
 <body>
-    <nav>
-        <h1>Favorites Movies</h1>
-        <a href="index.html">Home</a>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <h1 class="logo">
+                <img src="./assets/imgs/movie.png" alt="logo">
+                <span>Movify</span>
+            </h1>
+            <ul class="navbar-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="favorites.html">Favorites</a></li>
+            </ul>
+        </div>
     </nav>
-    <section id="favorites-list"></section>
+    
+    <section id="favorites-section">
+        <div class="movie-section">
+            <span class="text-uppercase">FAVORITES</span>
+            <h2>Your Favorite Movies</h2>
+        </div>
+        <div id="favorites-list"></div>
+    </section>
+
     <footer>
         <p>&copy; 2024 Movie Search App</p>
     </footer>
-    <script src="./assets/js/main.js"></script>
+
+    <script src="./assets/js/favorites.js"></script>
 </body>
 </html>
