@@ -1,0 +1,28 @@
+@import url("styles.css");
+
+.search-results {
+  padding: 5rem;
+}
+
+.search-results h2 {
+  color: var(--light-gray);
+  margin-top: .5rem;
+}
+
+.search-results img {
+  height:30px;
+  width: auto;
+  margin-right: 1rem;
+}
+
+
+.img-container {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+.fav {
+  font-size: 1.5rem;
+}

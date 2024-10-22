@@ -4,6 +4,9 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 /* system design */
 
 /* Dosis */
@@ -27,8 +30,22 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: var(--white);
+  background-image: url('../imgs/pexels-santiago-sauceda-gonzalez-3426899-15777224.jpg');
+  background-size: cover;
+  background-position: center;
   color: var(--dark-bg);
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(0 0 0 / 10%);
+  z-index: 0;
 }
 
 h1,h2 {
@@ -51,17 +68,13 @@ button:hover {
 }
 
 footer {
-  background-color: var(--light-gray);
+  background-color:#191919;
   padding: 10px;
   text-align: center;
-  color: var(--white);
+  color: var(--dark-teal);
   position: relative;
   bottom: 0;
   width: 100%;
-}
-
-footer p {
-  color: var(--dark-bg);
 }
 
 a {
@@ -76,12 +89,15 @@ a:hover {
 
 /* Navigation */
 .navbar {
-  background-color: var(--dark-bg);
+  /* background-color: rgba(1, 7, 10, 0.8); */
   padding: .5rem 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   color: var(--white);
+  position: absolute;
+  width: 100%;
+  z-index: 2;
 }
 
 .navbar-container {
@@ -91,6 +107,7 @@ a:hover {
   margin: auto;
   width: 90%;
 }
+
 
 .logo {
   display: flex;
@@ -201,14 +218,14 @@ input[type="text"] {
 }
 .movie-section span {
   font-weight: bold;
-  color: #333;
+  color: #b1abab;
   position: relative;
   border-bottom: 1px solid var(--dark-teal);
   padding-top: 1rem;
 }
 
 .movie-section h2 {
-  color: #444;
+  color: #b1abab;
   font-size: 1.75rem;
   margin-top: .5rem;
   margin-left: 1.5rem;
@@ -256,4 +273,9 @@ input[type="text"] {
 
 .movie-card:hover .overlay {
   opacity: 1;
+}
+
+
+.fav {
+  font-size: 1.5rem;
 }
