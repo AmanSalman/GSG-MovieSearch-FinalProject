@@ -7,13 +7,9 @@ async function fetchTopRatedMovies() {
     `https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}`
   );
   const data = await response.json();
-<<<<<<< HEAD
   console.log(data.results)
   localStorage.setItem('TopRated', JSON.stringify(data.results.slice(0, 12)));
   displayMovies(data.results.slice(0, 12), true);
-=======
-  displayMovies(data.results.slice(0, 12));
->>>>>>> 930cf52e6f35c581fcde642ebbb895273d223113
 }
 
 function displayMovies(movies, append = false) {
@@ -25,16 +21,6 @@ function displayMovies(movies, append = false) {
     const isFavorite = isMovieFavorite(movie.id) ? "♥" : "♡";
     
     card.innerHTML = `
-<<<<<<< HEAD
-      <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}">
-      <div class="overlay">
-        <h3>${movie.title}</h3>
-        <span>${movie.vote_average} ⭐</span> 
-        <span class="fav">♡</span>
-        <a href="details.html?id=${movie.id}" class="button-details">View Details</a>
-      </div>
-    `;
-=======
             <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}">
             <div class="overlay">
                 <h3>${movie.title}</h3>
@@ -43,12 +29,9 @@ function displayMovies(movies, append = false) {
                 <a href="details.html?id=${movie.id}" class="button-details">View Details</a>           
                </div>
         `;
->>>>>>> 930cf52e6f35c581fcde642ebbb895273d223113
     moviesList.appendChild(card);
   });
 }
-
-<<<<<<< HEAD
 
 fetchTopRatedMovies() 
 
@@ -91,7 +74,7 @@ if (window.location.pathname.includes("search-results.html")) {
   displaySearchResults();
 }
 
-=======
+
 // Toggle favorite status
 function toggleFavorite(movieId) {
   let favorites = getFavorites();
@@ -121,7 +104,6 @@ function isMovieFavorite(movieId) {
 // Initialize the app
 fetchTopRatedMovies();
 
->>>>>>> 930cf52e6f35c581fcde642ebbb895273d223113
 const searchButton = document.getElementById("search-button");
 const searchInput = document.getElementById("search");
 
