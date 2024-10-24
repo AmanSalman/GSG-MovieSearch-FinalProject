@@ -1,6 +1,0 @@
-@media (min-width:390px) and (max-width:450px){
-  .navbar-container {
-    flex-direction: column;
-    gap: 1rem;
-  }
-}
