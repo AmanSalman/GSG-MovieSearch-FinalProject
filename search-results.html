@@ -1,45 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/css/search-results.css">
-    <link rel="stylesheet" href="./assets/css/styles.css">
-    <link rel="stylesheet" href="./assets/css/media.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/search-results.css" />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+    <link rel="stylesheet" href="./assets/css/media.css" />
     <title>Search Results</title>
-</head>
-<body>
+  </head>
+  <body>
     <nav class="navbar">
-        <div class="navbar-container">
-            <a href="./index.html">
-            <h1 class="logo"> 
-                <img src="./assets/imgs/movie.png" alt="logo">
-                <span>Movify</span>
-            </h1></a>
-            <ul class="navbar-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="favorites.html">Favorites</a></li>
-                <li><a href="./index.html#top-rated">Top Rated</a></li>
-            </ul>
-        </div>
+      <div class="navbar-container">
+        <a href="./index.html">
+          <h1 class="logo">
+            <img src="./assets/imgs/movie.png" alt="logo" />
+            <span>Movify</span>
+          </h1></a
+        >
+        <ul class="navbar-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="favorites.html">Favorites</a></li>
+          <li><a href="./index.html#top-rated">Top Rated</a></li>
+        </ul>
+      </div>
     </nav>
 
     <section class="search-results">
-        <div class="img-container">
-            <h2>Search Results</h2>
-            <img src="./assets/imgs/film-slate.png" alt="movie">
-        </div>
-        <div id="message"></div>
+      <div class="img-container">
+        <h2>Search Results</h2>
+        <img src="./assets/imgs/film-slate.png" alt="movie" />
+      </div>
+      <div id="message"></div>
 
-        <div id="movies-list">
-            
-        </div>
+      <div id="movies-list"></div>
     </section>
 
     <footer>
-        <p>&copy; 2024 Movie Search App</p>
+      <p>&copy; 2024 Movie Search App</p>
     </footer>
     <script src="./assets/js/main.js"></script>
-</body>
+    <a href="#top" class="scroll-to-top">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        fill="none"
+        viewBox="0 0 24 20"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M5 10l7-7 7 7M12 17V3"
+        />
+      </svg>
+    </a>
+  </body>
 </html>

@@ -1,52 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/css/styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
     <title>Movie Search App</title>
-</head>
-<body>
+  </head>
+  <body>
     <nav class="navbar">
-        <div class="navbar-container">
-            <h1 class="logo"> 
-                <img src="./assets/imgs/movie.png" alt="logo">
-                <span>Movify</span>
-            </h1>
-            <ul class="navbar-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="favorites.html">Favorites</a></li>
-                <li><a href="#top-rated">Top Rated</a></li>
-            </ul>
-        </div>
+      <div class="navbar-container">
+        <h1 class="logo">
+          <img src="./assets/imgs/movie.png" alt="logo" />
+          <span>Movify</span>
+        </h1>
+        <ul class="navbar-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="favorites.html">Favorites</a></li>
+          <li><a href="#top-rated">Top Rated</a></li>
+        </ul>
+      </div>
     </nav>
 
     <section class="hero">
-        <div class="search-container">
-            <h2>Find Your Next Favorite Movie!</h2>
-            <input type="text" id="search" placeholder="Search for movies...">
-            <button id="search-button">Search</button>
-        </div>
+      <div class="search-container">
+        <h2>Find Your Next Favorite Movie!</h2>
+        <input type="text" id="search" placeholder="Search for movies..." />
+        <button id="search-button">Search</button>
+      </div>
     </section>
-    
+
     <section id="top-rated">
       <div class="movie-section">
         <span class="text-uppercase">MOVIES</span>
         <h2>Top Rated Movies</h2>
-    </div>
-    
-        <div id="movies-list"></div>
+      </div>
+
+      <div id="movies-list"></div>
     </section>
     <footer>
-        <p>&copy; 2024 A-Double M</p>
+      <p>&copy; 2024 A-Double M</p>
     </footer>
 
     <a href="#top" class="scroll-to-top">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 20" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7 7 7M12 17V3" />
-        </svg>
-      </a>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        fill="none"
+        viewBox="0 0 24 20"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M5 10l7-7 7 7M12 17V3"
+        />
+      </svg>
+    </a>
     <script src="./assets/js/main.js"></script>
-</body>
+  </body>
 </html>
