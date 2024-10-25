@@ -296,3 +296,28 @@ input[type="text"] {
     gap: 1rem;
   }
 }
+
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--dark-bg);
+  color: white;
+  padding: 10px;
+  border-radius: 50%;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.scroll-to-top:hover {
+  background-color: rgb(8, 8, 8);
+}
+
+.scroll-to-top svg {
+  width: 30px;
+  height: 30px;
+  fill: none;
+  stroke: white;
+}
