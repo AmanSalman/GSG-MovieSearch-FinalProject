@@ -14,7 +14,14 @@ async function fetchFavoriteMovies() {
   for (let id of favoriteIds) {
     const response = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=4038d7dc8938db59fb12025f3ee4e770`);
     const movie = await response.json();
-    
+    /****************** */
+        // Skip movies that are undefined or lack a poster image
+    if (!movie || !movie.poster_path) {
+      // Remove invalid movie ID from favorites
+      removeFavorite(id);
+      continue;
+    }
+    /*********** */
     const card = document.createElement("div");
     card.className = "movie-card";
     card.innerHTML = `
@@ -40,3 +47,20 @@ function removeFavorite(movieId) {
 
 // Initialize favorites display
 fetchFavoriteMovies();
+
+
+//*************Scroll to top button*************** */
+
+const scrollToTopButton = document.querySelector('.scroll-to-top');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300) { 
+    scrollToTopButton.style.display = 'block';
+  } else {
+    scrollToTopButton.style.display = 'none';
+  }
+});
+
+scrollToTopButton.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});

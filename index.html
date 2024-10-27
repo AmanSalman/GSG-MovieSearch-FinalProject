@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./assets/css/styles.css" />
     <title>Movie Search App</title>
   </head>
+
   <body>
     <nav class="navbar">
       <div class="navbar-container">
@@ -33,6 +34,8 @@
       </div>
     </section>
 
+    <!-- *************** Top rated movies Section ***************** -->
+
     <section id="top-rated">
       <div class="movie-section">
         <span class="text-uppercase">MOVIES</span>
@@ -41,10 +44,20 @@
 
       <div id="movies-list"></div>
     </section>
-    <footer>
-      <p>&copy; 2024 A-Double M</p>
-    </footer>
 
+
+     <!-- *************** Popular movies Section ************** -->
+     <section id="popular">
+        <div class="movie-section">
+         <span class="text-uppercase">MOVIES</span>
+         <h2>Explore More Movies</h2>
+         <p id="popular-movie-count"></p> <!-- Movie count for Popular Movies -->
+        </div>
+
+        <div id="popular-movies-list"></div>
+     </section>
+
+    <!--**************** Scroll to top ********************-->
     <a href="#top" class="scroll-to-top">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -62,6 +75,13 @@
         />
       </svg>
     </a>
+
+         
+    <footer>
+      <p>&copy; 2024 A-Double M</p>
+    </footer>
+
+
     <script src="./assets/js/main.js"></script>
   </body>
 </html>

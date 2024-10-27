@@ -300,6 +300,7 @@ input[type="text"] {
 
 .scroll-to-top {
   position: fixed;
+  display: none;
   bottom: 20px;
   right: 20px;
   background-color: var(--dark-bg);
@@ -321,3 +322,24 @@ input[type="text"] {
   fill: none;
   stroke: white;
 }
+
+
+#popular{
+  width: 90%;
+  margin: auto;
+}
+#popular-movies-list{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+#movie-section{
+  padding: 5rem;
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.5rem;
+  margin-left: 2rem;
+}
+
