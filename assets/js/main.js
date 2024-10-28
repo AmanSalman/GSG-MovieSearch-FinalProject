@@ -33,6 +33,7 @@ function displayMovies(movies) {
   });
 }
 
+// add to favorite
 function toggleFavorite(movieId) {
   let favorites = getFavorites();
   if (favorites.includes(movieId)) {
@@ -44,14 +45,17 @@ function toggleFavorite(movieId) {
   window.location = '../../favorites.html'
 }
 
+// get fav movies from local storage
 function getFavorites() {
   return JSON.parse(localStorage.getItem("favorites")) || [];
 }
 
+// check if the movies already in fav
 function isMovieFavorite(movieId) {
   const favorites = getFavorites();
   return favorites.includes(movieId);
 }
+
 
 async function fetchMovies(query) {
   const response = await fetch(
