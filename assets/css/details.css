@@ -145,3 +145,16 @@ body {
   background-color: rgb(112 112 112 / 50%);
   border-radius: 15px;
 }
+
+@media (max-width :600px){
+  .container {
+    width: 100%;
+    padding: 0rem;
+  }
+  .movie-header {
+    flex-direction: column;
+}
+.inner-container {
+  padding-top: 7rem;
+}
+}

@@ -107,6 +107,8 @@ searchButton.addEventListener("click", () => {
   const query = searchInput.value.trim();
   if (query) {
     window.location.href = `search-results.html?query=${encodeURIComponent(query)}`;
+  }else {
+    alert("enter a name please")
   }
 });
 
@@ -136,7 +138,8 @@ async function fetchPopularMovies() {
     `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`
   );
   const data = await response.json();
-  displayPopularMovies(data.results.slice(0, 14));
+  console.log(data)
+  displayPopularMovies(data.results.slice(0, 19));
 }
 
 function displayPopularMovies(movies) {
@@ -148,7 +151,7 @@ function displayPopularMovies(movies) {
 
   popularMoviesList.innerHTML = "";
   movies.forEach((movie) => {
-    if(movie.poster_path){
+    if(movie.poster_path && movie.id != 179387){
       const card = document.createElement("div");
       card.className = "movie-card";
       const isFavorite = isMovieFavorite(movie.id) ? "♥" : "♡";
