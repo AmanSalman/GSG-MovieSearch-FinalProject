@@ -15,7 +15,6 @@
   margin-right: 1rem;
 }
 
-
 .img-container {
   display: flex;
   gap: 1rem;
@@ -41,4 +40,29 @@
   margin-left: 1rem;
   font-size: 17px;
   display: none;
+}
+
+.scroll-to-top {
+  position: fixed;
+  display: none;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--dark-bg);
+  color: white;
+  padding: 10px;
+  border-radius: 50%;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.scroll-to-top:hover {
+  background-color: rgb(8, 8, 8);
+}
+
+.scroll-to-top svg {
+  width: 30px;
+  height: 30px;
+  fill: none;
+  stroke: white;
 }

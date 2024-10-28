@@ -8,7 +8,7 @@ async function fetchTopRatedMovies() {
   );
   const data = await response.json();
   displayMovies(data.results.slice(0, 12));
-  // localStorage.setItem('TopRated', JSON.stringify(data.results.slice(0, 12)));
+  //localStorage.setItem('TopRated', JSON.stringify(data.results.slice(0, 12)));
 }
 
 function displayMovies(movies) {
@@ -42,7 +42,8 @@ function toggleFavorite(movieId) {
     favorites.push(movieId);
   }
   localStorage.setItem("favorites", JSON.stringify(favorites));
-  window.location = '../../favorites.html'
+  window.location = './favorites.html';
+
 }
 
 // get fav movies from local storage
@@ -108,3 +109,62 @@ searchButton.addEventListener("click", () => {
     window.location.href = `search-results.html?query=${encodeURIComponent(query)}`;
   }
 });
+
+
+// Select the scroll-to-top button
+const scrollToTopButton = document.querySelector('.scroll-to-top');
+
+// Listen for scroll events on the window
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300) { // Show button when scrolled down 300px
+    scrollToTopButton.style.display = 'block';
+  } else {
+    scrollToTopButton.style.display = 'none';
+  }
+});
+
+// Scroll to the top when the button is clicked
+scrollToTopButton.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+
+
+//************************************************************************************* */
+async function fetchPopularMovies() {
+  const response = await fetch(
+    `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`
+  );
+  const data = await response.json();
+  displayPopularMovies(data.results.slice(0, 14));
+}
+
+function displayPopularMovies(movies) {
+  const popularMoviesList = document.getElementById("popular-movies-list");
+  const popularMovieCount = document.getElementById("popular-movie-count");
+  
+  // Set the count of popular movies
+  popularMovieCount.textContent = `${movies.length} Movies Found`;
+
+  popularMoviesList.innerHTML = "";
+  movies.forEach((movie) => {
+    if(movie.poster_path){
+      const card = document.createElement("div");
+      card.className = "movie-card";
+      const isFavorite = isMovieFavorite(movie.id) ? "♥" : "♡";
+
+      card.innerHTML = `
+        <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}">
+        <div class="overlay">
+          <h3> ${movie.title}</h3>
+          <span>${movie.vote_average} ⭐</span> 
+          <span class="fav" data-id="${movie.id}" onclick="toggleFavorite(${movie.id})">${isFavorite}</span>
+          <a href="details.html?id=${movie.id}" class="button-details">View Details</a>
+        </div>
+      `;
+      popularMoviesList.appendChild(card);
+    }
+  });
+}
+fetchTopRatedMovies();
+fetchPopularMovies();
