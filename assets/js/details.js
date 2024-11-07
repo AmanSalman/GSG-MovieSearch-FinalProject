@@ -1,4 +1,4 @@
-const API_KEY = '4038d7dc8938db59fb12025f3ee4e770';
+const API_KEY = 'YOUR API KEY';
 const movieheader = document.querySelector('.movie-header');
 const story = document.querySelector('.story');
 const imagegallery = document.querySelector('.image-gallery');
