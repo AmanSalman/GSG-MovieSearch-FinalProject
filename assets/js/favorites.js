@@ -1,3 +1,4 @@
+const API_KEY = "YOUR API KEY";
 
 const favoritesList = document.getElementById("favorites-list");
 
@@ -12,7 +13,7 @@ async function fetchFavoriteMovies() {
   }
 
   for (let id of favoriteIds) {
-    const response = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=4038d7dc8938db59fb12025f3ee4e770`);
+    const response = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key={API_KEY}`);
     const movie = await response.json();
     /****************** */
         // Skip movies that are undefined or lack a poster image
