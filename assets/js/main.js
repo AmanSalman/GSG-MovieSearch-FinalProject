@@ -1,4 +1,4 @@
-const API_KEY = "4038d7dc8938db59fb12025f3ee4e770";
+const API_KEY = "YOUR API KEY";
 const moviesList = document.getElementById("movies-list");
 const messageDiv = document.getElementById("message");
 
